@@ -6,16 +6,17 @@ public class DriverB extends Driver <Car>{
 
     @Override
     public void startMoving() {
-
+        System.out.println("Start moving");
     }
 
     @Override
     public void stop() {
-
+        System.out.println("Stop moving");
     }
 
     @Override
     public void refillAuto() {
+        System.out.println("Let's refill");
     }
 
     public void printing() {

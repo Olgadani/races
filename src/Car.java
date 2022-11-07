@@ -5,12 +5,12 @@ public class Car extends Transport implements Competing{
     public enum BodyType {sedan, hatchback, coupe, stationWagon, offRoad, crossover, pickup, van}
     @Override
     public void startMoving() {
-
+        System.out.println("Start moving");
     }
 
     @Override
     public void finishMoving() {
-
+        System.out.println("Stop moving");
     }
     @Override
     public void pitStop() {

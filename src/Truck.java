@@ -6,12 +6,12 @@ public class Truck extends Transport implements Competing{
     public enum tonnage {N1, N2, N3}
     @Override
     public void startMoving() {
-
+        System.out.println("Start moving");
     }
 
     @Override
     public void finishMoving() {
-
+        System.out.println("Stop moving");
     }
 
     @Override

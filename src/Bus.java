@@ -5,12 +5,12 @@ public class Bus extends Transport implements Competing{
     public enum capacity {extraSmall, small, middle, great, extraGreat}
     @Override
     public void startMoving() {
-
+        System.out.println("Start moving");
     }
 
     @Override
     public void finishMoving() {
-
+        System.out.println("Stop moving");
     }
 
     @Override
