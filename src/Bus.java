@@ -2,7 +2,7 @@ public class Bus extends Transport implements Competing{
     public Bus(String mark, String model, double volume) {
         super(mark, model, volume);
     }
-
+    public enum capacity {extraSmall, small, middle, great, extraGreat}
     @Override
     public void startMoving() {
 

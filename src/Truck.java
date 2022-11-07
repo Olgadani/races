@@ -3,6 +3,7 @@ public class Truck extends Transport implements Competing{
         super(mark, model, volume);
     }
 
+    public enum tonnage {N1, N2, N3}
     @Override
     public void startMoving() {
 

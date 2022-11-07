@@ -2,7 +2,7 @@ public class Car extends Transport implements Competing{
     public Car(String mark, String model, double volume) {
         super(mark, model, volume);
     }
-
+    public enum BodyType {sedan, hatchback, coupe, stationWagon, offRoad, crossover, pickup, van}
     @Override
     public void startMoving() {
 
