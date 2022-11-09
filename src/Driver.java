@@ -2,11 +2,13 @@ public abstract class Driver<C extends Transport> {
     private final String name;
     private String license;
     private int experience;
+    protected final C car;
 
-    public Driver(String name, String license, int experience) {
+    public Driver(String name, String license, int experience, C car) {
         this.name = Transport.checkDefault(name, "No infomation");
         setLicense(license);
         setExperience(experience);
+        this.car = car;
     }
 
     public String getName() {

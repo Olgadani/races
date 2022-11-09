@@ -26,6 +26,8 @@ public abstract class Transport {
     public abstract void startMoving();
     public abstract void finishMoving();
 
+    public abstract void printType();
+
     public static String checkDefault(String value, String error) {
         if (value == null || value.isBlank()) {
             return error;

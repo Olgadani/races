@@ -33,9 +33,9 @@ public class Main {
         ikarus.bestTime();
         ikarus.pitStop();
         ikarus.maxSpeed();
-        DriverB alex = new DriverB("Alex", "B", 5);
-        DriverC bob = new DriverC("Bob", "C", 7);
-        DriverD jack = new DriverD("Jack", "D", 4);
+        DriverB alex = new DriverB("Alex", "B", 5, lada);
+        DriverC bob = new DriverC("Bob", "C", 7, man);
+        DriverD jack = new DriverD("Jack", "D", 4, ikarus);
         alex.printing();
         bob.printing();
         jack.printing();

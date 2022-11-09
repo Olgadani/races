@@ -3,7 +3,33 @@ public class Truck extends Transport implements Competing{
         super(mark, model, volume);
     }
 
-    public enum tonnage {N1, N2, N3}
+    public enum Tonnage {
+        N1(null,3.5f),
+        N2(3.5f, 12f),
+        N3(12f, null);
+        private float tonnageFrom;
+        private float tonnageTo;
+
+        Tonnage(Float tonnageFrom, Float tonnageTo) {
+            this.tonnageFrom = tonnageFrom;
+            this.tonnageTo = tonnageTo;
+        }
+
+        public float getTonnageFrom() {
+            return tonnageFrom;
+        }
+
+        public float getTonnageTo() {
+            return tonnageTo;
+        }
+
+        @Override
+        public String toString() {
+            return "Грузоподъемность от " +
+                    getTonnageFrom() +
+                    ", до " + getTonnageTo();
+        }
+    }
     @Override
     public void startMoving() {
         System.out.println("Start moving");
@@ -12,6 +38,15 @@ public class Truck extends Transport implements Competing{
     @Override
     public void finishMoving() {
         System.out.println("Stop moving");
+    }
+
+    @Override
+    public void printType() {
+        if (Tonnage.values() != null) {
+            System.out.println(Tonnage.values());
+        } else {
+            System.out.println("Данных недостаточно");
+        }
     }
 
     @Override
