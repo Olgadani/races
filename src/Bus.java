@@ -49,6 +49,12 @@ public class Bus extends Transport implements Competing{
     }
 
     @Override
+    public boolean service() {
+        System.out.println("Автобус " + getMark() + " " + getModel() + " в диагностике не нуждается");
+        return true;
+    }
+
+    @Override
     public void pitStop() {
         System.out.println("Pitstop: " + getClass() + " " + getMark() + " 25 minutes");
     }
@@ -62,5 +68,8 @@ public class Bus extends Transport implements Competing{
     public void maxSpeed() {
         System.out.println("Max speed: " + getClass() + " " + getMark() + " " + 90);
     }
-
+    @Override
+    public void fixCar() {
+        System.out.println("Автобус " + getModel() + " " + getMark() + "починен");
+    }
 }

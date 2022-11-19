@@ -50,6 +50,11 @@ public class Truck extends Transport implements Competing{
     }
 
     @Override
+    public boolean service() {
+        return Math.random() > 0.5;
+    }
+
+    @Override
     public void pitStop() {
         System.out.println("Pitstop: " + getClass() + " " + getMark() + " 15 minutes");
     }
@@ -63,4 +68,10 @@ public class Truck extends Transport implements Competing{
     public void maxSpeed() {
         System.out.println("Max speed: " + getClass() + " " + getMark() + " " + 100);
     }
+
+    @Override
+    public void fixCar() {
+        System.out.println("Грузовик " + getModel() + " " + getMark() + "починен");
+    }
+
 }

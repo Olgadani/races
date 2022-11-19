@@ -20,7 +20,8 @@ public abstract class Driver<C extends Transport> {
     }
 
     public void setLicense(String license) {
-        this.license =  Transport.checkDefault(license, "No infomation");
+        if (license == null) {
+            throw new IllegalArgumentException("Необходимо указать тип прав");}
     }
 
     public int getExperience() {
@@ -35,5 +36,6 @@ public abstract class Driver<C extends Transport> {
     public abstract void stop();
 
     public abstract void refillAuto();
+
 
 }

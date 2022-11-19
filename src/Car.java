@@ -25,9 +25,13 @@ public class Car extends Transport implements Competing{
         public String toString() {
             return "Тип кузова " + this.bodyType;
         }
+
     }
 
-
+    @Override
+    public void fixCar() {
+        System.out.println("Машина " + getModel() + " " + getMark() + "починена");
+    }
     @Override
     public void startMoving() {
         System.out.println("Start moving");
@@ -45,6 +49,11 @@ public class Car extends Transport implements Competing{
         } else {
             System.out.println("Данных недостаточно");
         }
+    }
+
+    @Override
+    public boolean service() {
+        return Math.random() > 0.5;
     }
 
 
