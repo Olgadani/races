@@ -1,15 +1,13 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public abstract class Transport<H> {
 
         private String mark;
         private String model;
         private double volume;
-        private List<Transport<?>> transports = new ArrayList<>();
-        private List<Mechanics<?>> mechanics = new ArrayList<>();
-        private List<Sponsor> sponsors = new ArrayList<>();
+        private Set<Transport<?>> transports = new HashSet<>();
+        private Set<Mechanics<?>> mechanics = new HashSet<>();
+        private Set<Sponsor> sponsors = new HashSet<>();
         public Transport(String mark, String model, double volume) {
             this.mark = checkDefault(mark, "default");
             this.model = checkDefault(mark, "default");
@@ -55,7 +53,7 @@ public abstract class Transport<H> {
         transports.add(transport);
     }
 
-    public List<Transport<?>> getTransports() {
+    public Set<Transport<?>> getTransports() {
         return transports;
     }
 
@@ -63,8 +61,21 @@ public abstract class Transport<H> {
         return (Mechanics<?>) mechanics;
     }
 
-    public List<Sponsor> getSponsors() {
+    public Set<Sponsor> getSponsors() {
         return sponsors;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Transport<?> transport = (Transport<?>) o;
+        return Double.compare(transport.volume, volume) == 0 && Objects.equals(mark, transport.mark) && Objects.equals(model, transport.model);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(mark, model, volume);
     }
 
     public abstract void fixCar();
